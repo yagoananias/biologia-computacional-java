@@ -5,6 +5,9 @@
  */
 package biologia.computacional.java;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Yago
@@ -15,7 +18,18 @@ public class BiologiaComputacionalJava {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hi!");
+        Cabeca cabeca = new Cabeca();
+        
+        while(true) {
+            cabeca.criaMapa();
+            cabeca.atualiza();
+            cabeca.desenhaCabeca();
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(BiologiaComputacionalJava.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
     
 }
